@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: b3a3b08a4d5a65b4c860242bce11452e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Drawer_Drawer1_Drawer2_Drawer3
+    100002: DrawerKnob_Drawer_DrawerKnob2_Drawer1_DrawerKnob3_Drawer2_DrawerKnob4_Drawer3
+    100004: //RootNode
+    100006: LowPolyDesk
+    100008: pCube10
+    100010: pCube10_pCylinder3
+    100012: pCube4_Pillar1
+    100014: pCube4_Pillar2
+    100016: pCube4_Pillar3
+    100018: pCube4_Pillar4
+    100020: Pillar1_pCube13
+    100022: Pillar1_pCube3
+    100024: Pillar1_pCylinder1
+    100026: Pillar2_pCube3
+    100028: Pillar2_pCylinder1
+    100030: Pillar3_pCube3
+    100032: Pillar3_pCylinder1
+    100034: Pillar4_pCube3
+    100036: Pillar4_pCylinder1
+    400000: Drawer_Drawer1_Drawer2_Drawer3
+    400002: DrawerKnob_Drawer_DrawerKnob2_Drawer1_DrawerKnob3_Drawer2_DrawerKnob4_Drawer3
+    400004: //RootNode
+    400006: LowPolyDesk
+    400008: pCube10
+    400010: pCube10_pCylinder3
+    400012: pCube4_Pillar1
+    400014: pCube4_Pillar2
+    400016: pCube4_Pillar3
+    400018: pCube4_Pillar4
+    400020: Pillar1_pCube13
+    400022: Pillar1_pCube3
+    400024: Pillar1_pCylinder1
+    400026: Pillar2_pCube3
+    400028: Pillar2_pCylinder1
+    400030: Pillar3_pCube3
+    400032: Pillar3_pCylinder1
+    400034: Pillar4_pCube3
+    400036: Pillar4_pCylinder1
+    2100000: initialShadingGroup
+    2300000: Drawer_Drawer1_Drawer2_Drawer3
+    2300002: DrawerKnob_Drawer_DrawerKnob2_Drawer1_DrawerKnob3_Drawer2_DrawerKnob4_Drawer3
+    2300004: LowPolyDesk
+    2300006: pCube10
+    2300008: pCube10_pCylinder3
+    2300010: pCube4_Pillar1
+    2300012: pCube4_Pillar2
+    2300014: pCube4_Pillar3
+    2300016: pCube4_Pillar4
+    2300018: Pillar1_pCube13
+    2300020: Pillar1_pCube3
+    2300022: Pillar1_pCylinder1
+    2300024: Pillar2_pCube3
+    2300026: Pillar2_pCylinder1
+    2300028: Pillar3_pCube3
+    2300030: Pillar3_pCylinder1
+    2300032: Pillar4_pCube3
+    2300034: Pillar4_pCylinder1
+    3300000: Drawer_Drawer1_Drawer2_Drawer3
+    3300002: DrawerKnob_Drawer_DrawerKnob2_Drawer1_DrawerKnob3_Drawer2_DrawerKnob4_Drawer3
+    3300004: LowPolyDesk
+    3300006: pCube10
+    3300008: pCube10_pCylinder3
+    3300010: pCube4_Pillar1
+    3300012: pCube4_Pillar2
+    3300014: pCube4_Pillar3
+    3300016: pCube4_Pillar4
+    3300018: Pillar1_pCube13
+    3300020: Pillar1_pCube3
+    3300022: Pillar1_pCylinder1
+    3300024: Pillar2_pCube3
+    3300026: Pillar2_pCylinder1
+    3300028: Pillar3_pCube3
+    3300030: Pillar3_pCylinder1
+    3300032: Pillar4_pCube3
+    3300034: Pillar4_pCylinder1
+    4300000: Drawer_Drawer1_Drawer2_Drawer3
+    4300002: DrawerKnob_Drawer_DrawerKnob2_Drawer1_DrawerKnob3_Drawer2_DrawerKnob4_Drawer3
+    4300004: LowPolyDesk
+    4300006: pCube10
+    4300008: pCube10_pCylinder3
+    4300010: pCube4_Pillar1
+    4300012: pCube4_Pillar2
+    4300014: pCube4_Pillar3
+    4300016: pCube4_Pillar4
+    4300018: Pillar1_pCube13
+    4300020: Pillar1_pCube3
+    4300022: Pillar1_pCylinder1
+    4300024: Pillar2_pCube3
+    4300026: Pillar2_pCylinder1
+    4300028: Pillar3_pCube3
+    4300030: Pillar3_pCylinder1
+    4300032: Pillar4_pCube3
+    4300034: Pillar4_pCylinder1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.25
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
