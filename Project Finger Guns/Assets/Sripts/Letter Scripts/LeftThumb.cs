@@ -6,6 +6,7 @@ public class LeftThumb : MonoBehaviour {
 
     public static bool LeftThumbTrigger;
     public static bool LeftBThumbTrigger;
+    
 
     void OnTriggerEnter(Collider cols)
     {
@@ -19,5 +20,6 @@ public class LeftThumb : MonoBehaviour {
         {
             LeftBThumbTrigger = true;
         }
+     
     }
 }

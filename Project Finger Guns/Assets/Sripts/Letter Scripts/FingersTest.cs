@@ -9,101 +9,96 @@ using UnityEngine.UI;
 public class FingersTest : MonoBehaviour
 {
 
+    /*
+      Does not include these letter due to the lack of tracking of data, letters not coded include:H,J,K,R,S,T,W.
 
+     */
+    
     Controller controller;
     LeapProvider provider;
-    Vector PalmPosition;
-    Vector PalmDirection;
-    Vector PalmVelocity;
-    Vector3 Distance;
-    Transform Palmpos;
+    //Vector PalmPosition;
+    //Vector PalmDirection;
+    //Vector PalmVelocity;
+    //Vector3 Distance;
+    //Transform Palmpos;
 
     public Text GestureText;
     public GameObject RightModel;
     public GameObject LeftModel;
-    public GameObject leftKHand, rightKHand;
-    public AudioClip ding;
-    AudioSource audioSource;
-    bool dingBool;
+
 
     bool rightLetterG = false;
     bool IsExtended;
     public bool letterC;
+    bool letterCLeft;
     public bool letterA;
     bool letterZ = false;
     bool letterF = false;
     bool letterB;
-   public bool FKey = false;
+    bool letterD;
+    bool letterE;
+    bool letterL;
+    bool letterY;
+    public bool FKey = false;
     float RPinch;
     float LPinch;
     float RightAngleGrab;
     float LeftAngleGrab;
 
-    
+
     void Start()
     {
         //Gets frame data
         provider = FindObjectOfType<LeapProvider>() as LeapProvider;
         controller = new Controller();
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        
+
         // controller is a Controller object
-        Frame frame = controller.Frame(); 
+        Frame frame = controller.Frame();
 
         List<Hand> hands = frame.Hands;
         if (frame.Hands.Count > 0)
         {
             Hand firstHand = hands[0];
         }
-        PalmPosition = hands[0].PalmPosition;
-        PalmDirection = hands[0].Direction;
-        PalmVelocity = hands[0].PalmVelocity;
+        //PalmPosition = hands[0].PalmPosition;
+        //PalmDirection = hands[0].Direction;
+        //PalmVelocity = hands[0].PalmVelocity;
         RPinch = hands[0].PinchStrength;
         LPinch = hands[1].PinchStrength;
         RightAngleGrab = hands[0].GrabAngle;
         LeftAngleGrab = hands[1].GrabAngle;
 
-
         // print("position" + PalmPosition);
         // print("velocity" + PalmVelocity);
         // print("direction" + PalmDirection);
 
-        
 
-       
         Frame frames = provider.CurrentFrame;
         foreach (Hand hand in frame.Hands)
-        {
-
-
-            if (frame.Hands.Count < 2)
-            {
-                if (hand.IsLeft)
-                {
-                    rightKHand.SetActive(true);
-                    leftKHand.SetActive(false);
-                }
-                else if (hand.IsRight)
-                {
-                    leftKHand.SetActive(true);
-                    rightKHand.SetActive(false);
-                }
-                else
-                {
-                    rightKHand.SetActive(false);
-                    leftKHand.SetActive(false);
-                }
-            }
             //checks for right hand
             if (hand.IsRight)
             {
 
                 //assigns right hand a frame value
                 Hand handright = frames.Hands[0];
+
+                //letter A & letter Y
+                if (handright.Fingers[1].IsExtended && handright.Fingers[2].IsExtended == false && handright.Fingers[3].IsExtended == false && handright.Fingers[4].IsExtended == false && handright.Fingers[0].IsExtended == false)
+                {
+                    letterA = true;
+                    letterL = true;
+                    letterY = true;
+                }
+                else
+                {
+                    letterA = false;
+                    letterL = false;
+                    letterY = false;
+                }
 
                 //letter B
                 if (handright.Fingers[3].IsExtended == true && handright.Fingers[2].IsExtended == true && handright.Fingers[4].IsExtended == true)
@@ -119,20 +114,27 @@ public class FingersTest : MonoBehaviour
                 //Letter C
                 if (handright.Fingers[3].IsExtended == false && handright.Fingers[2].IsExtended == false && handright.Fingers[4].IsExtended == false)
                 {
-                    if (hand.IsRight && RPinch >= 0.3f && RPinch <= 0.8)
+                    if (RPinch >= 0.3f && RPinch <= 0.8)
                     {
                         letterC = true;
-                        print("Letter C");
                     }
+                    else letterC = false;
                 }
-                else letterC = false;
+               
 
-                //letterZ
-                if (RightAngleGrab >= 1.5 && RightAngleGrab <= 3.1)
+                //letter D
+                if (handright.Fingers[1].IsExtended && handright.Fingers[2].IsExtended && handright.Fingers[3].IsExtended == false && handright.Fingers[2].IsExtended == false && handright.Fingers[4].IsExtended == false)
                 {
-                    letterZ = true;
+                    letterD = true;
                 }
-                else letterZ = false;
+                else letterD = false;
+
+                //Letter E && I
+                if (handright.Fingers[1].IsExtended && handright.Fingers[2].IsExtended == false && handright.Fingers[3].IsExtended == false && handright.Fingers[4].IsExtended == false && handright.Fingers[0].IsExtended == false)
+                {
+                    letterE = true;
+                }
+                else letterE = false;
 
                 //Letter F
                 if (handright.Fingers[1].IsExtended && handright.Fingers[2].IsExtended && handright.Fingers[3].IsExtended == false && handright.Fingers[4].IsExtended == false && handright.Fingers[0].IsExtended == false)
@@ -147,17 +149,41 @@ public class FingersTest : MonoBehaviour
                     rightLetterG = true;
                 }
                 else rightLetterG = false;
+                
+                //letter M (not 100% will work)
 
-                //letter A
-                if (handright.Fingers[1].IsExtended && handright.Fingers[2].IsExtended == false && handright.Fingers[3].IsExtended == false && handright.Fingers[4].IsExtended == false && handright.Fingers[0].IsExtended == false)
+                // letter N (not 100% will work)
+
+                //Letter O 
+
+                //Letter P
+
+                //Letter Q
+
+                //Letter U (Not 100% will work)
+
+                //Letter X (not 100% will work)
+
+                //Letter Y covered in A condition ^
+               
+
+
+                //letterZ
+                if (RightAngleGrab >= 1.5 && RightAngleGrab <= 3.1)
                 {
-                    letterA = true;
+                    letterZ = true;
                 }
-                else letterA = false;
-
+                else letterZ = false;
             }
-        }
-       foreach (Hand hand in frame.Hands)
+
+
+
+
+
+
+
+
+        foreach (Hand hand in frame.Hands)
             //checks for left hand
             if (hand.IsLeft)
             {
@@ -165,17 +191,18 @@ public class FingersTest : MonoBehaviour
                 Hand handleft = frames.Hands[1];
 
                 //letter A
-                if(letterA == true && handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended && handleft.Fingers[3].IsExtended && handleft.Fingers[4].IsExtended && handleft.Fingers[0].IsExtended)
+                if (letterA == true && handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended && handleft.Fingers[3].IsExtended && handleft.Fingers[4].IsExtended && handleft.Fingers[0].IsExtended)
                 {
                     if (LeftThumb.LeftThumbTrigger == true)
                     {
                         print("A is true");
                         GestureText.text = "letter A";
                     }
-                            
-                }
-                    else LeftThumb.LeftThumbTrigger = false;
 
+                }
+                else LeftThumb.LeftThumbTrigger = false;
+
+                // letter b
                 if (handleft.Fingers[3].IsExtended == true && handleft.Fingers[2].IsExtended == true && handleft.Fingers[4].IsExtended == true)
                 {
                     if (hand.IsLeft && LPinch >= 1.0f)
@@ -189,26 +216,35 @@ public class FingersTest : MonoBehaviour
                             else letterB = false;
                         }
                     }
-                    
+
+                }
+
+                //letterC left hand
+                if (letterC == true && handleft.Fingers[1].IsExtended == false && handleft.Fingers[2].IsExtended == false && handleft.Fingers[3].IsExtended == false && handleft.Fingers[4].IsExtended == false && handleft.Fingers[0].IsExtended == false)
+                {
+                    letterCLeft = true;
+                    print("Letter C");
                 }
 
                 //Letter D parameters for left hand
-                if (letterC == true && handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended == false && handleft.Fingers[3].IsExtended == false && handleft.Fingers[4].IsExtended == false && handleft.Fingers[0].IsExtended == false)
+                //bugged wont register triggers
+                if (letterD == true && handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended == false && handleft.Fingers[3].IsExtended == false && handleft.Fingers[4].IsExtended == false && handleft.Fingers[0].IsExtended == false)
                 {
-                    if(LeftIndexKnuckle.IndexKnuckleTrigger == true && LeftIndex.LeftIndexTriggerLIndex == true)
+                    if (LeftIndexKnuckle.IndexKnuckleTrigger == true && LeftIndex.LeftIndexTriggerLIndex == true)
                     {
-                          GestureText.text = "letter D";
-                          print("Letter D");
+                        GestureText.text = "letter D";
+                        print("Letter D");
                     }
-                       
                 }
 
-                if (LeftAngleGrab == 0 && letterZ == true)
+                //letter E
+                if (letterE == true && handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended == false && handleft.Fingers[3].IsExtended == false && handleft.Fingers[4].IsExtended == false && handleft.Fingers[0].IsExtended == false)
                 {
-                        print("Z gesture");
-                        GestureText.text = "letter Z";
+                    if (LeftIndex.LeftIndexTriggerLIndex == true && PinkyMiddle.PinkyMiddleTrigger == true)
+                    {
+                            print("Letter E is correct");
+                    }
                 }
-
                 // Letter F parameters 
                 if (handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended && handleft.Fingers[3].IsExtended == false && handleft.Fingers[4].IsExtended == false && handleft.Fingers[0].IsExtended == false)
                 {
@@ -218,55 +254,116 @@ public class FingersTest : MonoBehaviour
                         {
                             print("Letter F");
                             FKey = true;
-                            AudioDing();
                             GestureText.text = "letter F";
                         }
 
                     }
                     else LeftIndex.LeftIndexTrigger = false;
-
-
                 }
-                if (LeftAngleGrab > 3  && rightLetterG == true)
+
+                //letter G
+                //is not finished
+                if (LeftAngleGrab > 3 && rightLetterG == true)
                 {
                     GestureText.text = "letter G";
                 }
+
+                //letter I & letter O & Letter U
+                //ABIT BUGGY I WONT GO FALSE AFTER COLLISION STOPS
+                if (handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended && handleft.Fingers[3].IsExtended && handleft.Fingers[4].IsExtended && handleft.Fingers[0].IsExtended)
+                {
+                    if (letterE == true && LeftMiddleTip.LeftMiddleTipTrigger == true)
+                    {
+                        print("Letter I");
+                    }
+                    else LeftMiddleTip.LeftMiddleTipTrigger = false;
+
+                    //letter O
+                    if (letterE == true && RingTip.LeftRingTip == true)
+                    {
+                        print("letter O");
+                    }
+                    else RingTip.LeftRingTip = false;
+
+                    if (letterE == true && PinkyTip.LeftPinkyTip == true)
+                    {
+                        print("Letter U");
+                    }
+                    else PinkyTip.LeftPinkyTip = false;
+                }
                 
-            }  
+                
+                //letter M done
+
+                // letter N done
+
+                //Letter O done
+
+                //Letter P
+
+                //Letter Q
+
+                //Letter U done
+
+                //Letter X (not 100% will work)
+                if(handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended == false && handleft.Fingers[3].IsExtended == false && handleft.Fingers[4].IsExtended == false && handleft.Fingers[0].IsExtended == false)
+                {
+
+                }
+
+                //Letter Y && Letter L
+                if(handleft.Fingers[1].IsExtended && handleft.Fingers[2].IsExtended && handleft.Fingers[3].IsExtended && handleft.Fingers[4].IsExtended && handleft.Fingers[0].IsExtended)
+                {
+                    //letter L
+                    if (BasePalm.LeftHandBaseL == true)
+                    {
+                        if (letterL == true)
+                        {
+                            print("Letter L is True");
+                        }
+                    }
+                    else BasePalm.LeftHandBaseL = false;
+
+                    //letter N
+                    if (BasePalm.LeftHandBaseN == true)
+                    {
+                        if (letterL == true)
+                        {
+                            print("letter N is true");
+                        }
+                    }
+                    else BasePalm.LeftHandBaseN = false;
+
+                    //letter M
+                    if (BasePalm.LeftHandBaseM == true)
+                    {
+                        if (letterL == true)
+                        {
+                            print("letter M is true");
+                        }
+                    }
+                    else BasePalm.LeftHandBaseM = false;
+
+                    //letter Y
+                    if (BaseThumb.LeftYThumbTrigger == true)
+                    {
+                        if (letterY == true)
+                        {
+                            print("letter Y is True");
+                        }
+                    }
+                }
+                else BaseThumb.LeftYThumbTrigger = false;
+
+                // letter Z
+                if (LeftAngleGrab == 0 && letterZ == true)
+                {
+                    print("Z gesture");
+                    GestureText.text = "letter Z";
+                }
+            }
     }
-
-    public void AudioDing()
-    {
-        if (!dingBool)
-        {
-            audioSource.PlayOneShot(ding, 0.7F);
-            dingBool = true;
-        }
-    }
-
-
-
-
-
-
-
-
-    //list finger attributes inside inspector
-
-    // public List<Finger> Fingers;
-    //public Finger Finger(int id)
-    //{
-    //    for (int i = Fingers.Count; i-- != 0;)
-    //    {
-    //        if (Fingers[i].Id == id)
-    //        {
-    //            return Fingers[i];
-    //        }
-    //    }
-    //    return null;
-    //}
 
 }
 
 
-  

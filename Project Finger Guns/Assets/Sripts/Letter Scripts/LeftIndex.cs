@@ -6,6 +6,7 @@ public class LeftIndex : MonoBehaviour {
 
     public static bool LeftIndexTrigger;
     public static bool LeftIndexTriggerLIndex;
+    
 
     void OnTriggerEnter(Collider cols)
     {

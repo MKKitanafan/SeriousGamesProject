@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour {
             item1.SetActive(true);
 
         }
+
     }
-
-
 }

@@ -118,7 +118,7 @@ namespace Valve.VR
 
                     errorLog += "To force OpenVR initialization call SteamVR.Initialize(true). ";
 
-                    Debug.Log(errorLog);
+                    //Debug.Log(errorLog);
                     SteamVR_Events.Initialized.Send(false);
                     return null;
                 }

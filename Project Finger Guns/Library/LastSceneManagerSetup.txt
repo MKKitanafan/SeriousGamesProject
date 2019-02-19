@@ -1,5 +1,4 @@
 sceneSetups:
-- path: D:/My Stuff/documents/Games Design & Development/advanced games design/Serious
-    Games Project/BSL Level Design/Assets/Scenes/IntroDesign.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
